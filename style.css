@@ -14,7 +14,15 @@ body {
 }
 
 html h1 {
+    font-style: italic;
+    padding: 10px;
+}
+
+html h1, html h2, html h3 {
     font-weight: bold;
+}
+
+html h2 {
     font-style: italic;
 }
 
@@ -68,20 +76,28 @@ main section {
     padding-top: 60px;
 }
 
+main section div {
+    max-width: 450px;
+}
+
 main section h1{
     grid-area: header;
 }
 
 main section h3 {
-    color: #23695aff;
+    color: #2e9b88ff;
 }
 
 main div {
-    margin: 5px;
+    padding:  15px;
 }
 
 main img {
-    width: 100%;
+    width: 100%;    
+}
+
+#drink .price {
+    float: right;
 }
  
 .form {
@@ -117,13 +133,12 @@ main img {
     background-color: #23695aff;
     margin-bottom: 0;
     color: whitesmoke;
-    font-weight: bold;
     padding: 5px;
 }
 
 #sportTabell div {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 4fr 1fr;
     text-align: left;
     border-top: 1px #23695aff solid;
     margin: 0;
@@ -134,8 +149,6 @@ main img {
 #whatson {
     margin: auto -100px;
 }
-
-
 
 #call {
     position: fixed;
@@ -151,7 +164,7 @@ main img {
 
 .price {
     color: rgba(35, 105, 90, 0.95);
-    float: right;
+    float: left;
     margin-top: 0;
 }
 
