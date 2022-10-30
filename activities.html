@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <title>Aktiviteter</title>
+</head>
+<body>
+    <nav>
+        <img src="img/logo.jpg" alt="Logo" height="55px">
+        <a href="index.html">                   <p>Meny</p></a>
+        <a href="activities.html" class="thisPage">   <p>Aktiviteter</p></a>
+        <a href="sport.html">                   <p>Sport</p></a>
+        <a href="whatson.html" >                <p>What's on</p></a>
+        <a href="help.html" >                   <p>Contact</p></a>
+    </nav>
+
+
+    <main>
+        <section id="activities">
+            <h1>Aktiviteter & spel på O´Learys</h1>
+            <div>
+                <img src="img/karaoke.jpg" alt="karaokerum">
+                <h2>KARAOKERUM</h2>
+                <p>Hyr ert alldeles egna karaokerum! Varje rum är försett med den bästa utrustningen med över 80 000 låtar att välja på!</p>
+                <p>Information:<br> - Rek. antal är 12 personer<br>- En bokning gäller 55 min</p>
+                <p class="price">Sön-Tors: 400 Fre-Lör: 700</p>
+            </div>
+            <div>
+                <img src="img/bowling.jpg" alt="bowling">
+                <h2>BOWLING</h2>
+                <p>Klassisk Bowling med våra 8 moderna banor. Vi har även discobowling!</p>
+                <p>Information:<br>- Rek. antal är 5 personer per bana<br>- priset avser bana och bowlingtimme (55 min)</p>
+                <p class="price">Sön-Tors: 300 Fre-Lör: 400</p>
+            </div>
+            <div>
+                <img src="img/shuffle.jpg" alt="shuffleboard">
+                <h2>SHUFFLEBOARD</h2>
+                <p>Det perfekta spelet för kompisgänget eller kollegorna! I vår lokal får du en omväxlande upplevelse av det klassiska spelet Shuffleboard med flera bord i härlig miljö.</p>
+                <p>Information:<br>- Rek. antal är 2-6 personer per bord</p>
+                <p class="price">Sön-Tors: 250 Fre-Lör: 300</p>            
+            </div>
+            <div>
+                <img src="img/bank.jpg" alt="bankshot">
+                <h2>BANKSHOT</h2>
+                <p>Nya spännande Bankshot - en blandning mellan shuffleboard och biljard!</p>
+                <p>Information:<br>- Rek. antal är 2-6 personer per bana</p>
+                <p class="price">Mån-Sön: 250</p>
+            </div>
+            <div>
+                <img src="img/dart.jpg" alt="klassisk dart">
+                <h2>KLASSISK DART</h2>
+                <p>Klassisk Dart - ett precicionsspel för både nybörjare och proffs.</p>
+                <p>Information:<br>- Kräver ingen bokning. Välkomna på drop in!</p>
+                <p class="price">Mån-Sön: 150 / Timme | Tavla</p>
+            </div>
+            <div>
+                <img src="img/arkad.jpg" alt="arkadhall">
+                <h2>ARKADHALL</h2>
+                <p>Utmana polarna, kollegorna eller familjen i ett flertalet spel & aktiviteter i vår 150m2 stora arkadhall!</p>
+                <p>Information:<br>- Kräver ingen bokning. Välkomna på drop in!</p>
+                <p class="price">Du spelar med poletter som köps direkt ur automaten i arkadhallen</p>
+            </div>
+            <div>
+                <img src="img/biljard.jpg" alt="biljardbord">
+                <h2>BILJARD</h2>
+                <p>Spela biljard i vår arkadhall! Lite som att ha ett biljardbord i vardagsrummet, fast bättre!</p>
+                <p class="price">Mån-Sön: 150 / Timme</p>
+            </div>
+            <div>
+                <img src="img/casino.jpg" alt="casino">
+                <h2>CASINO</h2>
+                <p>Växjös enda casino! Välkomna att spela Roulette och Black Jack hos oss.</p>
+                <p>Öppettider:<br>
+                Onsdagar 21:00 - 01:00<br>Torsdagar 21:00 - 01:00 <br>Fredagar Bord 1: 20:00-03:00, Bord 2: 23:00-03:00<br>Lördagar Bord 1: 20:00-03:00, Bord 2: 23:00-03:00</p>
+            </div>
+        </section>
+        
+
+    </main>
+
+    <section class="form" id="book">
+        <h3>Boka aktivitet</h3>
+        <form >
+            <h4>Aktiviteter:</h4>
+            <div>
+                <input type="radio" name="bowling" value="bowling">
+                <label for="bowling">Bowling</label><br>
+                <input type="radio" name="bowling" value="bowling">
+                <label for="bowling">Karaokerum</label><br>
+                <input type="radio" name="bowling" value="bowling">
+                <label for="bowling">Shuffleboard</label><br>
+                <input type="radio" name="bowling" value="bowling">
+                <label for="bowling">Bankshot</label><br>
+                <input type="radio" name="bowling" value="bowling">
+                <label for="bowling">Klassisk dart</label><br>
+                <input type="radio" name="bowling" value="bowling">
+                <label for="bowling">Arkadhall</label><br>
+                <input type="radio" name="bowling" value="bowling">
+                <label for="bowling">Biljard</label><br>
+                <input type="radio" name="bowling" value="bowling">
+                <label for="bowling">Casino</label><br>
+            </div>
+
+            <h4>Tider:</h4>
+
+            
+            <label for="name">Namn för bokningen</label>
+            <input type="text" name="name">
+
+            <input type="submit" value="SKICKA BOKNING" class="submitBtn">
+
+        </form>
+        
+    </section>
+
+    
+    
+</body>
+</html>

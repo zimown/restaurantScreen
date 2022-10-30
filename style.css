@@ -1,0 +1,178 @@
+
+html {
+    font-size: 16px;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 154px auto 220px;
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+    " .    nav    nav  "
+    " .   main  order "
+    " . footer footer";
+}
+
+html h1 {
+    font-weight: bold;
+    font-style: italic;
+}
+
+nav {
+    grid-area: nav;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1.5fr 1fr 1.5fr 1fr;
+    background-color: #353737ff;
+    width: 100%;
+}
+
+nav a {
+    padding-top: 10px;
+    font-size: 1.2em;
+}
+
+nav, aside {
+    position: fixed;
+}
+
+aside {
+    grid-area: aside;
+    background-color: #2e9b88ff;
+    top: 55px;
+    height: 100%;
+    width: 154px;
+}
+
+aside p {
+    border-bottom: #23695aff solid 0.5px;
+    padding: 15px 20px;
+    margin: 0;
+}
+
+aside p:hover {
+    background-color: #23695aff;
+    transition: 0.5s;
+}
+
+main {
+    grid-area: main;
+    min-height: 700px;
+    padding: 10px;
+}
+
+main section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    " header header";
+    padding-top: 60px;
+}
+
+main section h1{
+    grid-area: header;
+}
+
+main section h3 {
+    color: #23695aff;
+}
+
+main div {
+    margin: 5px;
+}
+
+main img {
+    width: 100%;
+}
+ 
+.form {
+    margin-top: 50px;
+    padding: 20px 10px;
+    grid-area: order;
+    background-color: gainsboro;
+}
+
+.submitBtn {
+    background-color: rgb(251, 219, 38);
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    color: rgb(80, 80, 80);
+}
+
+#book div {
+    padding-left: 30px;
+    font-size: 1.2em;
+}
+
+#activities {
+    margin-left: -100px;
+}
+
+#sportTabell {
+    margin: 20px -170px auto 50px;
+    text-align: center;
+}
+
+#sportTabell h2 {
+    background-color: #23695aff;
+    margin-bottom: 0;
+    color: whitesmoke;
+    font-weight: bold;
+    padding: 5px;
+}
+
+#sportTabell div {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    text-align: left;
+    border-top: 1px #23695aff solid;
+    margin: 0;
+    padding: 0 30px;
+    background-color: rgba(46, 155, 137, 0.167);
+}
+
+#whatson {
+    margin: auto -100px;
+}
+
+
+
+#call {
+    position: fixed;
+    bottom: 0;
+    background: rgba(35, 105, 90, 0.95);
+    color: whitesmoke;
+    padding: 10px 20px 0;
+}
+
+#call a {
+    color: white;
+}
+
+.price {
+    color: rgba(35, 105, 90, 0.95);
+    float: right;
+    margin-top: 0;
+}
+
+footer {
+    padding: 10px 40px;
+    grid-area: footer;
+    background-color: #23695aff;
+    color: #ffffffff;
+}
+
+aside a, nav a {
+    text-decoration: none;
+    color: white;
+}
+
+.thisPage {
+    text-decoration: underline;
+    opacity: 0.5;
+}
+
+aside a:hover, nav a:hover {
+    color: rgb(156, 156, 156);
+    transition: 0.5s;
+}
