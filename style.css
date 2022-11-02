@@ -10,7 +10,7 @@ body {
     grid-template-areas: 
     " .    nav    nav  "
     " .   main  order "
-    " . footer footer";
+    " footer footer footer";
 }
 
 html h1 {
@@ -22,6 +22,10 @@ html h1, html h2, html h3 {
     font-weight: bold;
 }
 
+h4 {
+    color: #23695aff;
+}
+
 html h2 {
     font-style: italic;
 }
@@ -29,7 +33,7 @@ html h2 {
 nav {
     grid-area: nav;
     display: grid;
-    grid-template-columns: 1.5fr 1fr 1.5fr 1fr 1.5fr 1fr;
+    grid-template-columns: 1.5fr 1.2fr 1.2fr 1fr 1fr;
     background-color: #353737ff;
     width: 100%;
 }
@@ -41,6 +45,10 @@ nav a {
 
 nav, aside {
     position: fixed;
+}
+
+#menu {
+    color: rgb(251, 219, 38);
 }
 
 aside {
@@ -73,7 +81,7 @@ main section {
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
     " header header";
-    padding-top: 60px;
+    padding-top: 50px;
 }
 
 main section div {
@@ -96,15 +104,69 @@ main img {
     width: 100%;    
 }
 
-#drink .price {
+#drink .price, #dips .price, #order .price {
     float: right;
+}
+
+
+#dips .add {
+    min-width: 200px;
+    width: 100%;
+}
+#extras {
+    padding: 0;
+}
+#extras div {
+    margin-bottom: 40px;
 }
  
 .form {
-    margin-top: 50px;
-    padding: 20px 10px;
     grid-area: order;
+    position: fixed;
+    top: 5px;
+    right: 0;
+    height: 100%;
+    width: 220px;
+    margin-top: 50px;
+    padding: 20px 5px;
     background-color: gainsboro;
+}
+
+#order form {
+    border-radius: 2px;
+    background-color: white;
+    padding-bottom: 1px;
+    margin-bottom: 10px;
+}
+
+#totalPrice, #total {
+    margin: 5px;
+}
+
+.order {
+    border-bottom: 1px black solid;
+    padding: 5px;
+    display: none;
+}
+
+.order p {
+    margin: 0;
+}
+
+.name {
+    font-weight: bold;
+}
+
+.delete {
+    float: right;
+    color: red;
+    font-size: 20px;
+    padding: 5px;
+    margin-top: -10px;
+}
+
+.delete:hover {
+    color: black;
 }
 
 .submitBtn {
@@ -113,6 +175,7 @@ main img {
     padding: 10px 20px;
     font-weight: bold;
     color: rgb(80, 80, 80);
+    box-shadow: 1px 3px 7px #c1c1c1;
 }
 
 #book div {
@@ -158,8 +221,27 @@ main img {
     padding: 10px 20px 0;
 }
 
-#call a {
-    color: white;
+#call a, .edit {
+    text-decoration: underline;
+}
+
+.edit {
+    color: black;
+}
+
+.add {
+    float: right;
+    font-weight: bold;
+    padding: 6px 16px;
+    border-radius: 2px;
+    box-shadow: 1px 3px 6px #c1c1c19d;
+    color: rgb(251, 219, 38);
+    background-color: rgba(35, 105, 90, 0.95);
+}
+
+.add:hover {
+    background-color: rgba(46, 155, 137, 0.687);
+    transition: 0.4s;
 }
 
 .price {
@@ -168,14 +250,22 @@ main img {
     margin-top: 0;
 }
 
+
 footer {
-    padding: 10px 40px;
     grid-area: footer;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    padding: 10px 40px;
     background-color: #23695aff;
     color: #ffffffff;
 }
 
-aside a, nav a {
+.time {
+    float: right;
+}
+
+html a {
     text-decoration: none;
     color: white;
 }
@@ -188,4 +278,13 @@ aside a, nav a {
 aside a:hover, nav a:hover {
     color: rgb(156, 156, 156);
     transition: 0.5s;
+}
+
+
+
+main #alert {
+    position: fixed;
+    top: 70px;
+    right: 250px;
+    max-width: 500px;
 }
