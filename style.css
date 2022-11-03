@@ -5,7 +5,7 @@ html {
 
 body {
     display: grid;
-    grid-template-columns: 154px auto 220px;
+    grid-template-columns: 154px auto 230px;
     grid-template-rows: auto auto;
     grid-template-areas: 
     " .    nav    nav  "
@@ -126,7 +126,7 @@ main img {
     top: 5px;
     right: 0;
     height: 100%;
-    width: 220px;
+    width: 230px;
     margin-top: 50px;
     padding: 20px 5px;
     background-color: gainsboro;
@@ -176,11 +176,24 @@ main img {
     font-weight: bold;
     color: rgb(80, 80, 80);
     box-shadow: 1px 3px 7px #c1c1c1;
+    width: 100%;
+}
+
+#time {
+    display: none;
+    background-color: rgba(46, 155, 137, 0.329);
+    margin-top: 20px;
+    padding: 4px;
+    border-radius: 2px;
 }
 
 #book div {
     padding-left: 30px;
     font-size: 1.2em;
+}
+
+#book {
+    padding-left: 10px;
 }
 
 #activities {
@@ -201,13 +214,14 @@ main img {
 
 #sportTabell div {
     display: grid;
-    grid-template-columns: 4fr 1fr;
+    grid-template-columns: 4fr 1fr 0.2fr;
     text-align: left;
     border-top: 1px #23695aff solid;
     margin: 0;
-    padding: 0 30px;
+    padding: 5px  30px;
     background-color: rgba(46, 155, 137, 0.167);
 }
+
 
 #whatson {
     margin: auto -100px;
@@ -221,7 +235,7 @@ main img {
     padding: 10px 20px 0;
 }
 
-#call a, .edit {
+#call a, .edit, #abort {
     text-decoration: underline;
 }
 
@@ -280,7 +294,10 @@ aside a:hover, nav a:hover {
     transition: 0.5s;
 }
 
-
+#choose2 form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
 
 main #alert {
     position: fixed;

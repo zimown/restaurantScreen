@@ -1,10 +1,13 @@
 
 function init() {
-    document.getElementById("submitBtn").addEventListener("click",submit);
+    document.getElementById("submitBtn").addEventListener("click",function() {submit(this.id);});
+    document.getElementById("makeCall").addEventListener("click",function() {submit(this.id);});
+    document.getElementById("abort").addEventListener("click",function() {submit(this.id);});
 
     var items = document.getElementsByClassName("add");
     var removeBtn = document.getElementsByClassName("delete");
     var edit = document.getElementsByClassName("edit");
+    
 
     for (let i = 0; i < items.length; i++) {
         items[i].addEventListener("click",function() {addMeal(this.id);});
@@ -18,14 +21,28 @@ function init() {
 }
 window.addEventListener("load",init);
 
-function submit() {
-    document.getElementById("alert").innerHTML = "<div class='alert alert-success' role='alert'>Your order has been sent to the kitchen!</div>";
+function submit(id) {
+    switch (id) {
+        case "makeCall":
+            document.getElementById("alert").innerHTML = "<div class='alert alert-success' role='alert'>Personal kommer strax!</div>";
+            break;
+        case "submitBtn":
+            document.getElementById("alert").innerHTML = "<div class='alert alert-success' role='alert'>Your order has been sent to the kitchen!</div>";
+            document.getElementById("time").style.display = "block";
+            break;
+        case "abort":
+            document.getElementById("alert").innerHTML = "<div class='alert alert-success' role='alert'>The order has been deleted!</div>";
+            break;
+    }
+    if (id == "makeCall") {
+       
+    } else {
+        
+    }   
 }
-
 
 function deleteMeal(id) {
     document.getElementById(id).style.display = "none";
-
 }
 
 function addMeal(id) {
@@ -62,15 +79,15 @@ function addMeal(id) {
 
 function chooseSize(id) {
     if (id == 2) {
-        document.getElementById("alert").innerHTML = '<div id="choose2" class="alert alert-success" role="alert"><a class="delete" id="choose2"><p>x</p></a><h2 class="alert-heading">Parmesan & garlic wings</h2><form><div><p>Välj hur många:</p><input name="type" type="radio" id="5" value="5"><label for="5">5 pcs</label><br><input name="type" type="radio" id="10" value="10" checked="true"><label for="10">10 pcs</label><br><input name="type" type="radio" id="15" value="15"><label for="15">15 pcs</label></div><div><p>Portioner: </p><input type="number" id="quantity" name="quantity" min="1" max="5" value="1"></div> <hr><input type="submit" value="Lägg till" class="choose submitBtn" id="2dish"></form></div>';
+        document.getElementById("alert").innerHTML = '<div id="choose2" class="alert alert-success" role="alert"><a class="delete" id="choose2"><p>x</p></a><h2 class="alert-heading">Parmesan & garlic wings</h2><form><div><p>Välj hur många:</p><input name="type" type="radio" id="5" value="5"><label for="5">5 pcs</label><br><input name="type" type="radio" id="10" value="10" checked="true"><label for="10">10 pcs</label><br><input name="type" type="radio" id="15" value="15"><label for="15">15 pcs</label></div><div><p>Portioner: </p><input type="number" id="quantity" name="quantity" min="1" max="5" value="1">Övrigt<input type="text"></div> <hr><input type="submit" value="Lägg till" class="choose submitBtn" id="2dish"></form></div>';
 
         document.getElementById("2dish").addEventListener("click",function() {document.getElementById("alert").innerHTML = "<div class='alert alert-success role='alert'><strong>Parmesan & garlic wings</strong> was added to your order!</div>";});
     } else if (id == 3) {
-        document.getElementById("alert").innerHTML = '<div id="choose2" class="alert alert-success" role="alert"><a class="delete" id="choose2"><p>x</p></a><h2 class="alert-heading">Creamy pasta</h2><form><div><p>Välj typ:</p><input name="type" type="radio" id="5" value="5"><label for="5">Vegetarisk</label><br><input name="type" type="radio" id="10" value="10"><label for="10">Kyckling</label><br><input name="type" type="radio" id="15" value="15" checked="true"><label for="15">Oxfilé</label></div><div><p>Portioner: </p><input type="number" id="quantity" name="quantity" min="1" max="5" value="1"></div> <hr><input type="submit" value="Lägg till" class="choose submitBtn" id="3dish"></div></form>';
+        document.getElementById("alert").innerHTML = '<div id="choose2" class="alert alert-success" role="alert"><a class="delete" id="choose2"><p>x</p></a><h2 class="alert-heading">Creamy pasta</h2><form><div><p>Välj typ:</p><input name="type" type="radio" id="5" value="5"><label for="5">Vegetarisk</label><br><input name="type" type="radio" id="10" value="10"><label for="10">Kyckling</label><br><input name="type" type="radio" id="15" value="15" checked="true"><label for="15">Oxfilé</label></div><div>Portioner: <input type="number" id="quantity" name="quantity" min="1" max="5" value="1">Övrigt<input type="text"></div> <hr><input type="submit" value="Lägg till" class="choose submitBtn" id="3dish"></div></form>';
 
         document.getElementById("3dish").addEventListener("click",function() {document.getElementById("alert").innerHTML = "<div class='alert alert-success role='alert'><strong>Creamy pasta with Oxfilé</strong> was added to your order!</div>";});
     } else {
-        document.getElementById("alert").innerHTML = '<div id="choose2" class="alert alert-success" role="alert"><a class="delete" id="choose2"><p>x</p></a><h2 class="alert-heading">Default editing</h2><form><div><p>Välj vad du vill ändra:</p><input name="type" type="radio" id="5" value="5"><label for="5">Vegetarisk</label><br><input name="type" type="radio" id="10" value="10"><label for="10">Kyckling</label><br><input name="type" type="radio" id="15" value="15" checked="true"><label for="15">Oxfilé</label></div><div><p>Portioner: </p><input type="number" id="quantity" name="quantity" min="1" max="5" value="1"></div> <hr><input type="submit" value="Uppdatera" class="choose submitBtn" id="3dish"></div></form>';
+        document.getElementById("alert").innerHTML = '<div id="choose2" class="alert alert-success" role="alert"><a class="delete" id="choose2"><p>x</p></a><h2 class="alert-heading">Default editing</h2><form><div><p>Välj vad du vill ändra:</p><input name="type" type="radio" id="5" value="5"><label for="5">Vegetarisk</label><br><input name="type" type="radio" id="10" value="10"><label for="10">Kyckling</label><br><input name="type" type="radio" id="15" value="15" checked="true"><label for="15">Oxfilé</label></div><div><p>Portioner: </p><input type="number" id="quantity" name="quantity" min="1" max="5" value="1">Övrigt<input type="text"></div> <hr><input type="submit" value="Uppdatera" class="choose submitBtn" id="3dish"></div></form>';
 
         document.getElementById("3dish").addEventListener("click",function() {document.getElementById("alert").innerHTML = "<div class='alert alert-success role='alert'><strong>Ändrad!</strong></div>";});
     }
