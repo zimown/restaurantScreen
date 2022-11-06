@@ -8,7 +8,6 @@ function init() {
     var removeBtn = document.getElementsByClassName("delete");
     var edit = document.getElementsByClassName("edit");
     
-
     for (let i = 0; i < items.length; i++) {
         items[i].addEventListener("click",function() {addMeal(this.id);});
     }
@@ -24,21 +23,17 @@ window.addEventListener("load",init);
 function submit(id) {
     switch (id) {
         case "makeCall":
-            document.getElementById("alert").innerHTML = "<div class='alert alert-success' role='alert'>Personal kommer strax!</div>";
+            document.getElementById("alert").innerHTML = "<div class='alert alert-success' role='alert'><strong>Personal kommer snart!</strong></div>";
             break;
         case "submitBtn":
-            document.getElementById("alert").innerHTML = "<div class='alert alert-success' role='alert'>Your order has been sent to the kitchen!</div>";
+            document.getElementById("alert").innerHTML = "<div class='alert alert-success' role='alert'>Your order has been <strong>sent to the kitchen</strong>!</div>";
             document.getElementById("time").style.display = "block";
             break;
         case "abort":
-            document.getElementById("alert").innerHTML = "<div class='alert alert-success' role='alert'>The order has been deleted!</div>";
+            document.getElementById("alert").innerHTML = "<div class='alert alert-success' role='alert'>The order has been <strong>removed</strong>!</div>";
+            document.getElementById("time").style.display = "none";
             break;
-    }
-    if (id == "makeCall") {
-       
-    } else {
-        
-    }   
+    } 
 }
 
 function deleteMeal(id) {

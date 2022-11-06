@@ -10,7 +10,7 @@ body {
     grid-template-areas: 
     " .    nav    nav  "
     " .   main  order "
-    " footer footer footer";
+    " footer footer footer ";
 }
 
 html h1 {
@@ -235,9 +235,15 @@ main img {
     padding: 10px 20px 0;
 }
 
-#call a, .edit, #abort {
+#makeCall, .edit, #abort {
     text-decoration: underline;
+    color: rgb(251, 219, 38);
 }
+
+#abort {
+    color: red;
+}
+
 
 .edit {
     color: black;
@@ -269,10 +275,17 @@ footer {
     grid-area: footer;
     display: grid;
     grid-template-columns: 1fr 1fr;
-
     padding: 10px 40px;
     background-color: #23695aff;
     color: #ffffffff;
+}
+
+#footer1 {
+    margin-right: 230px;
+}
+
+#footer2 {
+    margin-left: 154px;
 }
 
 .time {
