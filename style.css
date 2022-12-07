@@ -179,6 +179,11 @@ main img {
     width: 100%;
 }
 
+#submitBtn {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
 #time {
     display: none;
     background-color: rgba(46, 155, 137, 0.329);

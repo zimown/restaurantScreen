@@ -1,4 +1,3 @@
-
 function init() {
     document.getElementById("submitBtn").addEventListener("click",function() {submit(this.id);});
     document.getElementById("makeCall").addEventListener("click",function() {submit(this.id);});
@@ -28,6 +27,10 @@ function submit(id) {
         case "submitBtn":
             document.getElementById("alert").innerHTML = "<div class='alert alert-success' role='alert'>Your order has been <strong>sent to the kitchen</strong>!</div>";
             document.getElementById("time").style.display = "block";
+            document.getElementById("submitBtn").style.opacity = 0.6;
+            document.getElementById("submitBtn").style.pointerEvents = "none";
+            document.getElementById("mealOrder").style.display = "none";
+            document.getElementById("totalPrice").innerHTML = 0;
             break;
         case "abort":
             document.getElementById("alert").innerHTML = "<div class='alert alert-success' role='alert'>The order has been <strong>removed</strong>!</div>";
@@ -41,11 +44,25 @@ function deleteMeal(id) {
 }
 
 function addMeal(id) {
+    document.getElementById("mealOrder").style.display = "block";
+    document.getElementById("submitBtn").style.opacity = 1;
+    document.getElementById("submitBtn").style.pointerEvents = "auto";
+    // if (id == 0) {
+    //     //document.getElementById("totalPrice").innerHTML = tot + 39;
+    //     document.getElementById("food0").style.display = "block";
+
+    //     chooseSize(id);
+    //     return;
+    // }
     let name = document.getElementById("name"+id).innerHTML;
     document.getElementById("alert").innerHTML = "<div class='alert alert-success role='alert'><strong>" + name + "</strong> was added to your order!</div>";
     document.getElementById("food"+id).style.display = "block";
     let tot = parseInt(document.getElementById("totalPrice").innerHTML);
     switch (id) {
+        case "0":
+            chooseSize(id);
+            //document.getElementById("totalPrice").innerHTML = tot + 39;
+            break;
         case "1":
             document.getElementById("totalPrice").innerHTML = tot + 39;
             break;
@@ -73,7 +90,12 @@ function addMeal(id) {
 }
 
 function chooseSize(id) {
-    if (id == 2) {
+    if (id == 0) {
+        document.getElementById("alert").innerHTML = '<div id="choose2" class="alert alert-success" role="alert"><a class="delete" id="choose2"><p>x</p></a><h2 class="alert-heading">Classic steak</h2><form><div><p>Välj kött:</p><input name="type" type="radio" id="1" value="1"><label for="1">Ryggbiff</label><br><input name="type" type="radio" id="2" value="2" checked="true"><label for="2">Oxfilé</label></div><div><p>Portioner: </p><input type="number" id="quantity" name="quantity" min="1" max="5" value="1">Övrigt<input type="text"></div> <hr><input type="submit" value="Lägg till" class="choose submitBtn" id="addsteak"></form></div>';
+
+        document.getElementById("addsteak").addEventListener("click",addSteak);
+
+    } else if (id == 2) {
         document.getElementById("alert").innerHTML = '<div id="choose2" class="alert alert-success" role="alert"><a class="delete" id="choose2"><p>x</p></a><h2 class="alert-heading">Parmesan & garlic wings</h2><form><div><p>Välj hur många:</p><input name="type" type="radio" id="5" value="5"><label for="5">5 pcs</label><br><input name="type" type="radio" id="10" value="10" checked="true"><label for="10">10 pcs</label><br><input name="type" type="radio" id="15" value="15"><label for="15">15 pcs</label></div><div><p>Portioner: </p><input type="number" id="quantity" name="quantity" min="1" max="5" value="1">Övrigt<input type="text"></div> <hr><input type="submit" value="Lägg till" class="choose submitBtn" id="2dish"></form></div>';
 
         document.getElementById("2dish").addEventListener("click",function() {document.getElementById("alert").innerHTML = "<div class='alert alert-success role='alert'><strong>Parmesan & garlic wings</strong> was added to your order!</div>";});
@@ -86,4 +108,28 @@ function chooseSize(id) {
 
         document.getElementById("3dish").addEventListener("click",function() {document.getElementById("alert").innerHTML = "<div class='alert alert-success role='alert'><strong>Ändrad!</strong></div>";});
     }
+}
+
+function addSteak() {
+    var price;
+    var amount;
+    var type;
+    let tot = parseInt(document.getElementById("totalPrice").innerHTML);
+
+    var steak = document.forms[0];
+    if (steak[0].checked) {
+        type = "ryggbiff";
+        price = 289;
+    } else {
+        price = 309;
+        type = "oxfilé";
+    }
+
+    amount = steak[2].value;
+
+    document.getElementById("amount").innerHTML = amount + " " + type;
+    document.getElementById("steakprice").innerHTML = price*amount;
+    document.getElementById("totalPrice").innerHTML = tot + price*amount;
+
+    document.getElementById("alert").innerHTML = "<div class='alert alert-success role='alert'><strong>" + type + " steak</strong> was added to your order!</div>";
 }
