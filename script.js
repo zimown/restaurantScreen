@@ -47,13 +47,7 @@ function addMeal(id) {
     document.getElementById("mealOrder").style.display = "block";
     document.getElementById("submitBtn").style.opacity = 1;
     document.getElementById("submitBtn").style.pointerEvents = "auto";
-    // if (id == 0) {
-    //     //document.getElementById("totalPrice").innerHTML = tot + 39;
-    //     document.getElementById("food0").style.display = "block";
 
-    //     chooseSize(id);
-    //     return;
-    // }
     let name = document.getElementById("name"+id).innerHTML;
     document.getElementById("alert").innerHTML = "<div class='alert alert-success role='alert'><strong>" + name + "</strong> was added to your order!</div>";
     document.getElementById("food"+id).style.display = "block";
@@ -61,7 +55,6 @@ function addMeal(id) {
     switch (id) {
         case "0":
             chooseSize(id);
-            //document.getElementById("totalPrice").innerHTML = tot + 39;
             break;
         case "1":
             document.getElementById("totalPrice").innerHTML = tot + 39;
